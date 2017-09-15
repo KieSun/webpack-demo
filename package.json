@@ -1,0 +1,25 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^3.5.6"
+  },
+  "devDependencies": {
+    "webpack": "^3.5.6"
+  },
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KieSun/webpack-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KieSun/webpack-demo/issues"
+  },
+  "homepage": "https://github.com/KieSun/webpack-demo#readme"
+}
