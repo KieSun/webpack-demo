@@ -11,7 +11,8 @@ const VENOR = ["faker",
   "react-redux",
   "redux",
   "redux-form",
-  "redux-thunk"
+  "redux-thunk",
+  "react-router"
 ]
 
 module.exports = {
@@ -39,7 +40,7 @@ module.exports = {
       name: ['vendor', 'manifest'],
       minChunks: Infinity
     }),
-    new CleanWebpackPlugin(['dist/bundle.*.js','dist/manifest.*.js'], {
+    new CleanWebpackPlugin(['dist/*.js'], {
       verbose: true,
       dry: false
     }),
