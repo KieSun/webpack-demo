@@ -20,6 +20,10 @@ module.exports = {
     bundle: './src/index.js',
     vendor: VENOR
   },
+  // 如果想修改 webpack-dev-server 配置，在这个对象里面修改
+  devServer: {
+    port: 8081
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
