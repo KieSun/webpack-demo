@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 const VENOR = ["faker",
   "lodash",
@@ -34,9 +36,24 @@ module.exports = {
         use: 'babel-loader'
       },
       {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        use: [{
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: 'images/[name].[hash:7].[ext]'
+            }
+        }]
+    },
+    {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
+        loader: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [{
+                loader: 'css-loader'
+            }]
+        })
+    },
     ]
   },
   plugins: [
@@ -50,6 +67,20 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'index.html'
+    }),
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify("process.env.NODE_ENV")
+    }),
+    new ExtractTextPlugin("css/[name].[contenthash].css"),
+    new OptimizeCSSPlugin({
+      cssProcessorOptions: {
+        safe: true
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
     })
   ]
 };
