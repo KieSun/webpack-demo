@@ -353,7 +353,7 @@ cd webpack-demo/project
 // 切换到 0.1 标签上并创建一个新分支
 git checkout -b demo 0.1
 // 查看分支是否为 demo，没问题的话就可以进行下一步
-gst
+cd project && npm i
 ```
 
 ## 如何在项目中使用 webpack
