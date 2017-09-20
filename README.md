@@ -358,7 +358,7 @@ cd project && npm i
 
 ## 如何在项目中使用 webpack
 
-项目中已经配置了很简单的 babel 和 webpack，直接运行 `npm run start` 即可
+项目中已经配置了很简单的 babel 和 webpack，直接运行 `npm run build` 即可
 
 ![](https://user-gold-cdn.xitu.io/2017/9/15/95957c4402c35a8458ed848d1d193513)
 
